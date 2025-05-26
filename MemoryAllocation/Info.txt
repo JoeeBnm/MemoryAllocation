@@ -1,0 +1,51 @@
+1. First Fit
+
+How it works:
+    Scans memory blocks from the beginning and allocates the first block that is large enough to satisfy the request.
+
+Advantage:
+    Fast and simple.
+
+Drawback:
+    Can lead to many small unusable gaps (fragmentation) at the start of memory.
+
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+2. Next Fit
+
+How it works:
+
+    Similar to First Fit, but instead of always starting from the beginning, it starts searching from where it last allocated memory. If it reaches the end, it wraps around to the start.
+
+Advantage:
+    Can be faster than First Fit in some cases, as it doesn’t always start from the beginning.
+
+Drawback:
+    Can still cause fragmentation, but distributes it more evenly.
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+3. Best Fit
+How it works:
+
+    Searches all memory blocks and allocates the smallest block that is large enough for the request (the “best” fit).
+
+Advantage:
+    Minimizes wasted space in each allocation.
+
+Drawback:
+    Can be slower (must check all blocks) and may create many very small unusable gaps (fragmentation).
+
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+4. Worst Fit
+
+How it works:
+    Searches all memory blocks and allocates the largest available block that is big enough for the request.
+
+Advantage:
+    Leaves larger blocks available for future allocations, potentially reducing fragmentation.
+
+Drawback:
+    Can also create fragmentation, and may waste large blocks on small requests.
