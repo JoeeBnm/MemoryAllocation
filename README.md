@@ -1,58 +1,56 @@
-# Memory Allocation Algorithm Simulator (Mini Project)
+# 📦 Memory Allocation Simulator (C)
 
-This is a simple C program that simulates two basic memory allocation algorithms:
+A simple, interactive command-line **Memory Allocation Simulator** written in C.  
+It allows you to simulate and compare different dynamic memory allocation strategies, commonly taught in operating systems courses.
+
+---
+
+## 📖 Description
+
+This simulator manages a predefined number of memory blocks and allows the user to allocate memory using various well-known algorithms:
+
 - **First Fit**
 - **Best Fit**
+- **Worst Fit**
+- **Next Fit**
+- **FIFO (First In First Out)**
+- **Round Robin (Tourniquet)**
 
-It allows you to allocate and free memory blocks, and see how the algorithms work in practice.
+You can allocate and free memory blocks, and display the current memory status through a menu-driven interface.
 
-## Features
-- User chooses total memory size and number of blocks
-- Allocate memory using First Fit or Best Fit
-- Free memory blocks
-- Display current memory status
-- Simple, menu-driven interface
+---
 
-## How to Compile and Run
+## 🚀 Features
 
-1. **Compile:**
-   ```bash
-   gcc memory_simulator.c -o memory_simulator
-   ```
-2. **Run:**
-   ```bash
-   ./memory_simulator
-   ```
+- 📏 Initialize total memory and block sizes
+- 📊 Simulate memory allocation using six different algorithms
+- 🗑️ Free allocated memory blocks
+- 📝 View real-time memory status and block allocation history
+- 🖥️ Simple, interactive, and terminal-based
 
-## Menu Options
-- **1. Allocate memory (First Fit):** Allocates using the first available block that fits
-- **2. Allocate memory (Best Fit):** Allocates using the smallest available block that fits
-- **3. Free memory:** Frees a block by its number
-- **4. Show memory status:** Displays all blocks and their status
-- **5. Exit:** Quits the program
+---
 
-## Example
-```
-Welcome to Memory Allocation Simulator!
+## 🛠️ How It Works
 
-=== Memory Initialization ===
-Enter total memory size: 1000
-Enter number of blocks: 3
-Enter size of block 0: 400
-Enter size of block 1: 300
-Enter size of block 2: 300
+- **Blocks**: The memory is divided into a fixed number of blocks, each with a user-defined size.
+- **Allocation Algorithms**:
+  - **First Fit**: Allocates the first block large enough.
+  - **Best Fit**: Allocates the smallest block that fits.
+  - **Worst Fit**: Allocates the largest block that fits.
+  - **Next Fit**: Like First Fit, but continues search from the last allocated block.
+  - **FIFO**: Allocates the oldest available block.
+  - **Round Robin**: Cycles through memory blocks in a circular fashion.
+- **Freeing Memory**: You can free a specific block by its index.
+- **Display Memory**: Check each block's size, status (used/free), and timestamp.
 
-What would you like to do?
-1. Allocate memory (First Fit)
-2. Allocate memory (Best Fit)
-3. Free memory
-4. Show memory status
-5. Exit
+---
 
-Enter your choice (1-5): 1
-How much memory do you want to allocate? 200
-Success! Memory allocated in block 0
-```
+## 📦 How to Compile and Run
 
-## Author
-- [Your Name] 
+### 🖥️ Requirements:
+- GCC compiler
+- Terminal / Command Prompt
+
+### 📝 Compile:
+```bash
+gcc -o memory_simulator memory_simulator.c
